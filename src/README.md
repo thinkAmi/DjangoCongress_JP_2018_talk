@@ -1,5 +1,17 @@
-# Django Congress 2018 presentation repository
+# Django Congress JP 2018 の資料中で使用したソースコード
 
+このディレクトリ以下に含まれるソースコードは
+
+- WSGIアプリ ( `wsgi_app` 以下)
+- Djangoアプリ ( `myproject` 以下)
+
+の2種類です。
+
+以下にアプリの起動方法を記載します。
+
+　  
+
+---
 
 ## WSGIアプリ
 
@@ -21,7 +33,7 @@ $ curl http://localhost:15000
 Hello, WSGI function
 ```
 
-
+　  
 ### クラスベースのWSGIアプリの起動と動作確認
 
 起動
@@ -38,6 +50,7 @@ $ curl http://localhost:15001
 Hello, WSGI class
 ```
 
+　  
 ### WSGIアプリ + WSGIミドルウェアの起動と動作確認
 
 起動
@@ -55,6 +68,9 @@ Hello, WSGI class
 Hello, WSGI middleware
 ```
 
+　  
+
+---
 
 ## Djangoアプリ
 
@@ -82,7 +98,7 @@ called: HelloView
 [wsgi_middleware] after view
 ```
 
-
+　  
 ### HelloDjangoMiddleware
 
 #### 起動
@@ -108,7 +124,7 @@ called: HelloView
 [hello] after view
 ```
 
-
+　  
 ### ProcessViewDjangoMiddleware
 #### 起動
 
@@ -152,6 +168,7 @@ overwrite by process_view
 [process_view] after view
 ```
 
+　  
 ### ProcessTemplateResponseDjangoMiddleware
 #### 起動
 
@@ -176,6 +193,7 @@ called: HelloTemplateView
 [process_template_response] after view
 ```
 
+　  
 ### ProcessExceptionDjangoMiddleware
 #### 起動
 
@@ -244,7 +262,7 @@ Traceback (most recent call last):
 ValueError: Oops!
 ```
 
-
+　  
 ### DeprecationMixinDjangoMiddleware
 #### 起動
 
@@ -259,7 +277,7 @@ $ curl localhost:8000/myapp/template
 overwrite by deprecation mixin middleware
 ```
 
-
+　  
 ### UnusedDjangoMiddleware
 #### 起動
 
@@ -283,7 +301,7 @@ hello
 called: HelloTemplateView
 ```
 
-
+　  
 ### 複数WSGIミドルウェア(FirstWSGIMiddleware他)
 #### 起動
 
@@ -303,6 +321,7 @@ called: HelloView
 [wsgi3] after view
 ```
 
+　  
 ### 複数Djangoミドルウェア(FirstDjangoMiddleware他)
 #### 起動
 
@@ -331,6 +350,7 @@ called: HelloTemplateView
 [django1] after view
 ```
 
+　  
 ### Django/WSGIミドルウェアとも複数ある場合
 #### 起動
 
@@ -359,6 +379,7 @@ called: HelloTemplateView
 [wsgi2] after view
 ```
 
+　  
 ### WSGIミドルウェアでの例外送出
 #### WSGIミドルウェアでハンドリング
 ##### 起動
@@ -384,7 +405,7 @@ ValueError: raised by process_template_response
 [wsgi] response: <class 'django.http.response.HttpResponse'>
 ```
 
-
+　  
 ### Djangoミドルウェアで例外送出
 
 #### Djangoミドルウェアでハンドリング
