@@ -19,6 +19,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
 application = get_wsgi_application()
 
 # 追加
-application = FirstWSGIMiddleware(application)
-application = SecondWSGIMiddleware(application)
 application = ThirdWSGIMiddleware(application)
+application = SecondWSGIMiddleware(application)
+application = FirstWSGIMiddleware(application)

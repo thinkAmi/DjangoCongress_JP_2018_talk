@@ -312,13 +312,13 @@ $ python manage.py runserver --settings=myproject.settings.multi_wsgi_middleware
 #### Djangoログ
 
 ```
-[wsgi3] before view
-[wsgi2] before view
 [wsgi1] before view
-called: HelloView
-[wsgi1] after view
-[wsgi2] after view
+[wsgi2] before view
+[wsgi3] before view
+called: HelloTemplateView
 [wsgi3] after view
+[wsgi2] after view
+[wsgi1] after view
 ```
 
 　  
@@ -364,8 +364,8 @@ $ python manage.py runserver --settings=myproject.settings.multi_wsgi_and_django
 ```
 [django2] one-time configuration
 [django1] one-time configuration
-[wsgi2] before view
 [wsgi1] before view
+[wsgi2] before view
 [django1] before view
 [django2] before view
 [django1] process view
@@ -375,8 +375,8 @@ called: HelloTemplateView
 [django1] process template response
 [django2] after view
 [django1] after view
-[wsgi1] after view
 [wsgi2] after view
+[wsgi1] after view
 ```
 
 　  
