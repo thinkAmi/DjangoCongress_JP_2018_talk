@@ -194,6 +194,28 @@ called: HelloTemplateView
 ```
 
 　  
+### ProcessViewTemplateDjangoMiddleware
+#### 起動
+
+```
+$ python manage.py runserver --settings=myproject.settings.process_view_template
+```
+
+#### 動作確認
+
+```
+[process_view] before view
+[process_view] hook!
+<class 'django.core.handlers.wsgi.WSGIRequest'>
+<class 'function'>
+<class 'tuple'>
+<class 'dict'>
+[process_template_response] hook!
+<class 'django.core.handlers.wsgi.WSGIRequest'>
+<class 'django.template.response.TemplateResponse'>
+[process_view] after view
+```
+
 ### ProcessExceptionDjangoMiddleware
 #### 起動
 
